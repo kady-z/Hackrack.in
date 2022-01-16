@@ -33,7 +33,7 @@ body {
 }
 
 .navbar__container {
-  max-width: 100%;
+  max-width: 90%;
   margin: auto;
   height: 4rem;
   display: flex;
@@ -48,12 +48,18 @@ body {
 }
 
 .navbar__btn {
+  width: 100%;
+  padding-top: 2rem;
   position: fixed;
   background: #fff;
   right: -100%;
+  height: 100vh;
+  transition: all 0.6s;
 }
 
 .navbar__btn li {
+  width: 50%;
+  margin: auto;
   padding: 1rem 0;
   text-align: left;   
   border-bottom: 1px solid lightgray;
@@ -61,15 +67,7 @@ body {
 
 .navbar__btn li a {
   color: var(--hackrack_black);
-  font-size: 1rem;
-}
-
-.check__btn {
-  font-size: 1rem;
-  background-color: lightgrey;
-  color: var(--hackrack_black);
-  border-radius: 0.4rem;
-  cursor: pointer;
+  font-size: 1.35rem;
 }
 
 #check {
@@ -77,25 +75,20 @@ body {
 }
 
 #check:checked ~ .navbar__btn {
-  width: 50%;
   top: 50px;
   right: 0;
 } 
 
-.hamburger {
-  padding: 0.5rem;
-}
-
 .hamburger .line {
-  width: 25px;
-  height: 3px;
+  width: 2rem;
+  height: 1.5px;
   background-color: #000;
   display: block;
-  margin: 0 auto 3px;
-  -webkit-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-}
+  margin: 0.4rem;
+  -webkit-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}s
 
 .hamburger:hover {
   cursor: pointer;
@@ -106,18 +99,14 @@ body {
   -ms-transform: rotate(90deg);
   -o-transform: rotate(90deg);
   transform: rotate(90deg);
+  transition-delay: 0.5s;
+  transition-timing-function: linear;
 }
 
 #check:checked ~ .check__btn .hamburger .line:nth-child(2) {
-  -webkit-transition: none;
-  -o-transition: none;
-  transition: none;
-}
-
-#check:checked ~ .check__btn .hamburger .line:nth-child(2) {
-  -webkit-transition-delay: 0.3s;
-  -o-transition-delay: 0.3s;
-  transition-delay: 0.3s;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s linear;
 }
 
 #check:checked ~ .check__btn .hamburger .line:nth-child(2) {
@@ -131,13 +120,14 @@ body {
   -ms-transform-origin: right;
   -o-transform-origin: right;
   transform-origin: right;
+  transition-delay: 0.7s;
 }
 
 #check:checked ~ .check__btn .hamburger .line:nth-child(1) {
-  -webkit-transform: translateY(15px) rotate(45deg);
-  -ms-transform: translateY(15px) rotate(45deg);
-  -o-transform: translateY(15px) rotate(45deg);
-  transform: translateY(15px) rotate(45deg);
+  -webkit-transform: translateY(23px) rotate(45deg);
+  -ms-transform: translateY(23px) rotate(45deg);
+  -o-transform: translateY(23px) rotate(45deg);
+  transform: translateY(23px) rotate(45deg);
 }
 
 #check:checked ~ .check__btn .hamburger .line:nth-child(3) {
@@ -153,19 +143,16 @@ body {
 
 @media screen and (min-width: 426px) {
 
-  .navbar__container {
-    max-width: 90%;
-  }
-
   .check__btn {
     display: none;
   }
 
   .navbar__btn {
-    position: static;
-    display: flex;
+    padding-top: 0;
     background-color: transparent;
-    gap: clamp(1rem, 3vw, 4rem);
+    max-width: 15rem;
+    position: static;
+    display: inline-flex;
   }
   
   .navbar__btn li {
@@ -187,8 +174,12 @@ body {
   .navbar__container {
     max-width: 70%;
   }
+
+  .navbar__btn {
+    max-width: 20rem;
+  }
  
   .navbar__btn li a {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
 }
